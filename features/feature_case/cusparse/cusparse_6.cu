@@ -422,6 +422,10 @@ void test_cusparseTcsrgemm2() {
   cudaFree(ws_1_d);
   cudaFree(ws_1_c);
   cudaFree(ws_1_z);
+  cusparseDestroyCsrgemm2Info(info_s);
+  cusparseDestroyCsrgemm2Info(info_d);
+  cusparseDestroyCsrgemm2Info(info_c);
+  cusparseDestroyCsrgemm2Info(info_z);
   cusparseDestroy(handle);
 
   c_s_val.D2H();
