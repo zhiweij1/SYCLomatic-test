@@ -45,7 +45,7 @@ exec_tests = ['asm', 'asm_bar', 'asm_mem', 'asm_atom', 'asm_arith', 'asm_vinst',
               'constant_attr', 'sync_warp_p2', 'occupancy_calculation', 'kernel_function_pointer',
               'text_experimental_obj_array', 'text_experimental_obj_driver_api', 'text_experimental_obj_linear', 'text_experimental_obj_memcpy2d_api', 'text_experimental_obj_memcpy3d_api',
               'text_experimental_obj_mipmap', 'text_experimental_obj_peer_api', 'text_experimental_obj_pitch2d', 'text_experimental_obj_sample_api', 'text_experimental_obj_surf',
-              'text_obj_array', 'text_obj_linear', 'text_obj_pitch2d', 'match',
+              'text_obj_array', 'text_obj_linear', 'text_obj_pitch2d', 'match', 'cub_block_shuffle',
               'curand-device2', 'curandEnum', 'codepin_all_public_dump', 'virtual_memory',
               'thrust-unique_by_key', 'cufft_test', 'cufft-external-workspace', "pointer_attributes", 'math_intel_specific', 'math-drcp', 'thrust-pinned-allocator', 'driverMem',
               'cusolver_test1', 'cusolver_test2', 'cusolver_test3', 'cusolver_test4', 'cusolver_test5', 'thrust_op', 'cublas-extension', 'cublas_v1_runable', 'thrust_minmax_element',
@@ -63,7 +63,7 @@ exec_tests = ['asm', 'asm_bar', 'asm_mem', 'asm_atom', 'asm_arith', 'asm_vinst',
               'thrust_device_new_delete', 'thrust_temporary_buffer', 'thrust_malloc_free', 'codepin', 'thrust_unique_count',
               'thrust_advance_trans_op_itr', 'cuda_stream_query', "matmul", "matmul_2", "matmul_3", "transform",  "context_push_n_pop",
               "graphics_interop_d3d11", 'graph', 'asm_shfl', 'asm_shfl_sync', 'asm_shfl_sync_with_exp', 'asm_membar_fence',
-              'cub_block_store']
+              'cub_block_store', 'asm_red']
 
 occupancy_calculation_exper = ['occupancy_calculation']
 
@@ -116,7 +116,7 @@ def migrate_test():
         src.append(' --rule-file=./user_defined_rules/rules.yaml')
     if test_config.current_test == 'user_defined_rules_2':
         dpct_dir = os.path.dirname(shutil.which("dpct"))
-        src.append(' --rule-file=' + dpct_dir + '/../extensions/pytorch_api_rule_rules/pytorch_api.yaml ')
+        src.append(' --rule-file=' + dpct_dir + '/../extensions/pytorch_api_rules/pytorch_api.yaml ')
         include_dir = os.path.abspath('user_defined_rules_2')
         src.append(' --extra-arg="-I ' + include_dir + '" ')
         return do_migrate(src, 'user_defined_rules_2/src', test_config.out_root, extra_args)
