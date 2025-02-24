@@ -7,6 +7,7 @@
     <test testName="asm" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
     <test testName="asm_bar" configFile="config/TEMPLATE_asm.xml" />
     <test testName="asm_mem" configFile="config/TEMPLATE_asm.xml" />
+    <test testName="asm_red" configFile="config/TEMPLATE_asm.xml" />
     <test testName="asm_atom" configFile="config/TEMPLATE_asm.xml" />
     <test testName="asm_vinst" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
     <test testName="asm_v2inst" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
@@ -209,6 +210,7 @@
     <test testName="cub_block_store" configFile="config/TEMPLATE_cub_excluding_syclcompat.xml" />
     <test testName="cub_block_exchange" configFile="config/TEMPLATE_cub_excluding_syclcompat.xml" />
     <test testName="cub_block_radix_sort" configFile="config/TEMPLATE_cub_excluding_syclcompat.xml" />
+    <test testName="cub_block_shuffle" configFile="config/TEMPLATE_cub_excluding_syclcompat.xml" />    
     <test testName="cub_device" configFile="config/TEMPLATE_cub_device.xml" />
     <test testName="cub_device_histgram" configFile="config/TEMPLATE_cub_device.xml" />
     <test testName="cub_device_partition" configFile="config/TEMPLATE_cub_device.xml" />
@@ -307,7 +309,7 @@
     <test testName="merge1004to1007" configFile="config/TEMPLATE_misc.xml" />
     <test testName="result_type_overload" configFile="config/TEMPLATE_misc_skip_cuda.xml" />
     <test testName="user_defined_rules" configFile="config/TEMPLATE_user_defined_rules.xml" />
-    <!-- <test testName="user_defined_rules_2" configFile="config/TEMPLATE_user_defined_rules_2.xml" splitGroup="double"/> -->
+    <test testName="user_defined_rules_2" configFile="config/TEMPLATE_user_defined_rules_2.xml" splitGroup="double"/>
     <test testName="get_library_version" configFile="config/TEMPLATE_misc.xml" />
     <test testName="group-local-memory" configFile="config/TEMPLATE_thrust-qmc.xml" splitGroup="double"/>
     <test testName="cublas-extension" configFile="config/TEMPLATE_cuBlas_11.xml" splitGroup="double"/>
